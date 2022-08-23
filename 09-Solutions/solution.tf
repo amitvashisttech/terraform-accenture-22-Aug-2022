@@ -28,6 +28,11 @@ resource "aws_instance" "east_frontend" {
   lifecycle {
     create_before_destroy = true
   }
+  
+  tags = {
+    Name = "east-front-${count.index}"
+    Team = "DevOps"
+  }
 }
 
 resource "aws_instance" "west_frontend" {
@@ -40,6 +45,10 @@ resource "aws_instance" "west_frontend" {
   lifecycle {
     create_before_destroy = true
   }
+  tags = {
+    Name = "west-front-${count.index}"
+    Team = "DevOps"
+}
 }
 
 
@@ -51,6 +60,10 @@ resource "aws_instance" "east_backend" {
   lifecycle {
     prevent_destroy = false
   }
+  tags = {
+    Name = "east-back-${count.index}"
+    Team = "DevOps"
+}
 }
 
 
@@ -63,6 +76,10 @@ resource "aws_instance" "west_backend" {
   lifecycle {
     prevent_destroy = false
   }
+  tags = {
+    Name = "west-back-${count.index}"
+    Team = "DevOps"
+}
 }
 
 output "PublicIP_East_Frontend" {
