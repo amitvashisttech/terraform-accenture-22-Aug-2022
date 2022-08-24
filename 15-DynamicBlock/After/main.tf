@@ -24,6 +24,7 @@ resource "aws_security_group" "demo-sg" {
     from_port = ingress.value
     to_port   = ingress.value
     protocol  = "tcp"
+    description = "${join("- ", tolist(["Allow Inbound Traffic from port no ", ingress.value]))}"
     cidr_blocks = ["0.0.0.0/0"]
    }
   }
@@ -33,6 +34,7 @@ resource "aws_security_group" "demo-sg" {
    content { 
     from_port = egress.value
     to_port   = egress.value
+    description = "${join("- ", tolist(["Allow Outbound Traffic from port no ", egress.value]))}"
     protocol  = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
    }
