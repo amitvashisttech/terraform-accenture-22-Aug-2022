@@ -1,6 +1,7 @@
 resource "aws_instance" "dev-app" { 
   ami = data.aws_ami.myami.id
   instance_type = "t2.micro"
+  availability_zone = "us-east-2a"
   
   tags = { 
     Name = local.default_name
