@@ -1,5 +1,6 @@
 resource "aws_instance" "dev-app" { 
   ami = data.aws_ami.myami.id
+  availability_zone = "us-east-2a"
   instance_type = "t2.micro"
  
  # root disk
