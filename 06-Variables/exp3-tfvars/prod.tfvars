@@ -1,1 +1,0 @@
-myname="PROD-EC2"

@@ -1,1 +1,0 @@
-myname="UAT-EC2"
