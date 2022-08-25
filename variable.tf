@@ -5,7 +5,7 @@ variable "frontend_instance_count" {
 
 
 variable "backend_instance_count" { 
-   default = 1
+   default = 2
 }
 
 

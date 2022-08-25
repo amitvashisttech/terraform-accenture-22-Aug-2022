@@ -11,8 +11,3 @@ module "backend" {
   ec2_count = var.backend_instance_count 
 }
 
-
-
-module "myec2" { 
-  source = "./modules/ec2"
-}
